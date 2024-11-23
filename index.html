@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jason Photography</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Jason.jpeg</h1>
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#work">Photo</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+    <section id="work">
+        <h3>Jason's Photography</h3>
+        <div class="portfolio">
+            <div class="portfolio-item">
+                <a href="Event.html">
+                    <img src="images/Boon%20Beng/20240505082359_IMG_0562.jpg" alt="Event">
+                    <div class="text">Event</div>
+                    <div class="overlay">
+                        <button></button>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="Portraits.html">
+                    <img src="images/portraits/20240607103034_IMG_2581.jpg" alt="Portraits">
+                    <div class="text">Portraits</div>
+                    <div class="overlay">
+                        <button></button>
+                    </div>
+                </a>
+            </div>
+            <div class="portfolio-item">
+                <a href="Car.html">
+                    <img src="images/Car/20240706210134_IMG_4642 (1).jpg" alt="Car">
+                    <div class="text">Car</div>
+                    <div class="overlay">
+                        <button></button>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="about">
+        <h2>About</h2>
+        <div class="about-container">
+            <div class="about-photo">
+                <img src="images/Profile pic/WhatsApp Image 2024-11-24 at 01.04.36_a49c19d1.jpg" alt="Jason Ng">
+            </div>
+            <p>
+                Jason is a passionate photographer in capturing stunning events,
+                vibrant portraits, and memorable moments. Explore his portfolio and get in touch for collaborations.
+            </p>
+        </div>
+    </section>
+    
+    <section id="contact">
+        <h3>Follow me on Instagram</h3>
+        <p>Check out my other photos on Instagram!</p>
+    
+        <div class="instagram-links-container">
+            <a href="https://www.instagram.com/jason.jpeg_/" target="_blank" class="instagram-link">
+                <img src="images/Profile pic/IMG_20240220_182952_462.jpg" alt="Profile" class="profile-pic">
+                <span>@jason.jpeg_</span>
+            </a>
+            <a href="https://www.instagram.com/20240503121500_img_008.jpg/" target="_blank" class="instagram-link">
+                <img src="images/Profile pic/IMG_20240503_182227_047.jpg" alt="Image" class="profile-pic">
+                <span>@20240503121500_img_008.jpg</span>
+            </a>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>&copy; 2024 Jason Ng Photography</p>
+    </footer>
+</body>
+</html>
