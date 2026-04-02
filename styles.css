@@ -201,18 +201,18 @@ header {
     text-align: center;
 }
 
+/* --- Optimized Profile Picture Size --- */
 .about-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    max-width: 1000px;
-    margin: 0 auto;
+    align-items: flex-start; /* Aligns the photo to the top of the text */
 }
 
 .about-image {
-    flex: 1;
-    border-radius: 8px;
+    /* 0 means don't grow, 0 means don't shrink, 320px is the exact width */
+    flex: 0 0 320px; 
+    max-width: 320px;
+    
+    /* Maintains the editorial look we added earlier */
+    border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
@@ -221,6 +221,21 @@ header {
     width: 100%;
     height: auto;
     display: block;
+    /* This ensures your face is centered if the photo isn't a perfect square */
+    object-fit: cover; 
+}
+
+.about-text {
+    flex: 1; /* Tells the text to take up all the remaining space */
+}
+
+/* Ensure it still looks good on mobile */
+@media (max-width: 768px) {
+    .about-image {
+        flex: 0 0 auto;
+        max-width: 250px; /* Even smaller on phones */
+        margin: 0 auto 30px;
+    }
 }
 
 .about-text {
