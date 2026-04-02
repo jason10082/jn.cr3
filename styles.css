@@ -483,7 +483,87 @@ footer {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* --- THE BIGGER VIDEO LIGHTBOX --- */
+/* =========================================
+   CINEMATOGRAPHY PAGE LAYOUT 
+   ========================================= */
+
+.video-grid {
+    display: grid;
+    /* Automatically creates as many columns as fit on the screen */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    width: 100%;
+    padding: 0 5% 80px;
+}
+
+.video-item {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* FORCES a perfect widescreen thumbnail */
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #111;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Image Protection: Sits on top of the GIF/Thumbnail */
+.video-item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 5;
+    background: transparent;
+}
+
+.video-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops edges to fit the 16:9 box perfectly */
+    display: block;
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: brightness(0.8); 
+    pointer-events: none; /* Protection: Prevents right-click on the GIF */
+}
+
+.video-item:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+/* --- The Fixed Play Button --- */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 10; 
+}
+
+/* Changes to YouTube Red when you hover over the video! */
+.video-item:hover .play-icon {
+    background: #e52d27; 
+    border-color: #e52d27;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* =========================================
+   THE BIGGER VIDEO POP-UP (LIGHTBOX)
+   ========================================= */
+
 .lightbox {
     display: none;
     position: fixed;
@@ -492,42 +572,29 @@ footer {
     background-color: var(--overlay-bg);
     align-items: center;
     justify-content: center;
-    /* We remove extra padding here to give the video more room */
-    padding: 0; 
+    padding: 20px; /* Reduced padding to let the video expand */
 }
 
-/* Force the video to be massive */
 .video-frame {
-    /* "!important" ensures other lightbox settings don't shrink it */
-    width: 90vw !important; 
-    height: auto !important;
-    aspect-ratio: 16 / 9;
-    
-    max-width: 1800px !important; /* Huge cap for desktop */
-    max-height: 85vh !important;  /* Stops it from hitting the top/bottom */
-    
+    width: 95vw;            /* Uses 95% of the screen width */
+    max-width: 1600px;      /* Large cap for high-res monitors */
+    max-height: 85vh;       /* Prevents cutting off the bottom on shorter screens */
+    aspect-ratio: 16 / 9;   /* Keeps the cinematic shape */
     background-color: #000;
     border: none;
-    border-radius: 4px;
-    box-shadow: 0 30px 60px rgba(0,0,0,0.6);
-}
-
-/* Reset any photo-specific settings that might be interfering */
-.lightbox-content.video-frame {
-    max-width: 90vw; 
-    max-height: 85vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .close-btn {
     position: absolute;
-    top: 30px;
-    right: 40px;
+    top: 20px;
+    right: 30px;
     color: var(--text-main);
-    font-size: 50px; /* Bigger button for the bigger video */
-    font-weight: 300;
+    font-size: 40px;
     cursor: pointer;
     z-index: 2001;
-    line-height: 1;
+    user-select: none;
 }
 
 /* --- The Fixed Play Button --- */
