@@ -489,7 +489,7 @@ footer {
 
 .video-grid {
     display: grid;
-    /* This automatically creates as many columns as fit on the screen */
+    /* Automatically creates as many columns as fit on the screen */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     width: 100%;
@@ -507,13 +507,24 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
+/* Image Protection: Sits on top of the GIF/Thumbnail */
+.video-item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 5;
+    background: transparent;
+}
+
 .video-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops any weird edges so it fits the 16:9 box perfectly */
+    object-fit: cover; /* Crops edges to fit the 16:9 box perfectly */
     display: block;
     transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(0.8); /* Dims the image slightly so the play button pops */
+    filter: brightness(0.8); 
+    pointer-events: none; /* Protection: Prevents right-click on the GIF */
 }
 
 .video-item:hover img {
@@ -539,7 +550,7 @@ footer {
     border: 2px solid #fff;
     pointer-events: none;
     transition: all 0.3s ease;
-    z-index: 2; 
+    z-index: 10; 
 }
 
 /* Changes to YouTube Red when you hover over the video! */
@@ -549,6 +560,42 @@ footer {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
+/* =========================================
+   THE BIGGER VIDEO POP-UP (LIGHTBOX)
+   ========================================= */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background-color: var(--overlay-bg);
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Reduced padding to let the video expand */
+}
+
+.video-frame {
+    width: 95vw;            /* Uses 95% of the screen width */
+    max-width: 1600px;      /* Large cap for high-res monitors */
+    max-height: 85vh;       /* Prevents cutting off the bottom on shorter screens */
+    aspect-ratio: 16 / 9;   /* Keeps the cinematic shape */
+    background-color: #000;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--text-main);
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2001;
+    user-select: none;
+}
 /* --- Main Page Category Text Overlays --- */
 
 .category-title {
