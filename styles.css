@@ -489,7 +489,7 @@ footer {
 
 .video-grid {
     display: grid;
-    /* Automatically creates as many columns as fit on the screen */
+    /* This automatically creates as many columns as fit on the screen */
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
     width: 100%;
@@ -507,24 +507,13 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
-/* Image Protection: Sits on top of the GIF/Thumbnail */
-.video-item::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    z-index: 5;
-    background: transparent;
-}
-
 .video-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops edges to fit the 16:9 box perfectly */
+    object-fit: cover; /* Crops any weird edges so it fits the 16:9 box perfectly */
     display: block;
     transition: transform 0.4s ease, filter 0.4s ease;
-    filter: brightness(0.8); 
-    pointer-events: none; /* Protection: Prevents right-click on the GIF */
+    filter: brightness(0.8); /* Dims the image slightly so the play button pops */
 }
 
 .video-item:hover img {
@@ -550,37 +539,7 @@ footer {
     border: 2px solid #fff;
     pointer-events: none;
     transition: all 0.3s ease;
-    z-index: 10; 
-}
-
-/* Changes to YouTube Red when you hover over the video! */
-.video-item:hover .play-icon {
-    background: #e52d27; 
-    border-color: #e52d27;
-    transform: translate(-50%, -50%) scale(1.1);
-}
-
-
-
-/* --- The Fixed Play Button --- */
-.play-icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 1.5rem;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.7);
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    border: 2px solid #fff;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    z-index: 10; 
+    z-index: 2; 
 }
 
 /* Changes to YouTube Red when you hover over the video! */
