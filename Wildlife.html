@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife | JN.CR3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>JN.CR3</h1></a>
+        </div>
+        <div class="nav-container">
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#work">Selected Works</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <button id="theme-toggle">Dark Mode</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h2>Wildlife</h2>
+        <p>Capturing the raw beauty of nature. Featuring my 3rd-place award-winning shot.</p>
+    </section>
+
+    <section class="gallery-container">
+        <div class="photo-grid">
+            
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0251.jpg" alt="3rd Place Wildlife Photography">
+            </div>
+            
+            <div class="photo-item">
+                <img src="images/Wildlife/0G8A1449-Enhanced-SR.jpg" alt="Wildlife Photo">
+            </div>
+            
+            <div class="photo-item">
+                <img src="images/Wildlife/0G8A1471-Enhanced-SR.jpg" alt="Wildlife Photo">
+            </div>
+            
+            <div class="photo-item">
+                <img src="images/Wildlife/0G8A1609-Enhanced-SR.jpg" alt="Wildlife Photo">
+            </div>
+            
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0074.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0223-Enhanced-NR.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0354-Enhanced-NR.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0366-Enhanced-SR.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_1346-Enhanced-NR.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_1329.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_1437.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_1479-Enhanced-NR.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_5709.jpg" alt="Wildlife Photo">
+            </div>
+
+            <div class="photo-item">
+                <img src="images/Wildlife/IMG_0354-Enhanced-NR.jpg" alt="Wildlife Photo">
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2026 Jason Ng Photography</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navLinks = document.querySelector('.nav-links');
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
+    <script src="theme-toggle.js"></script>
+</body>
+</html>

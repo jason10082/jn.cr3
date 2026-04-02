@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinematography | JN.CR3</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><h1>JN.CR3</h1></a>
+        </div>
+        <div class="nav-container">
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#work">Selected Works</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <button id="theme-toggle">Dark Mode</button>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h2>Cinematography</h2>
+        <p>Story-driven interviews, dynamic edits, and high-energy visuals.</p>
+    </section>
+
+ <section class="gallery-container">
+        <div class="video-grid">
+            
+            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/i9Ve3kO7YxM?autoplay=1')">
+                <img src="images/Video/compressed file & gif/Project Loop gif.gif" alt="Cinematic Project 1">
+                <div class="play-icon">▶</div>
+            </div>
+            
+            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/Y47jc6WfKAk?autoplay=1')">
+                <img src="images/Video/compressed file & gif/Holly Horror trailer gif.gif" alt="Cinematic Project 2">
+                <div class="play-icon">▶</div>
+            </div>
+            
+            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/mKi5OD2-v3E?autoplay=1')">
+                <img src="images/Video/compressed file & gif/Rooted in Heritage gif.gif" alt="Cinematic Project 3">
+                <div class="play-icon">▶</div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="close-btn">&times;</span>
+        <iframe class="lightbox-content video-frame" id="lightbox-video" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Jason Ng Photography</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navLinks = document.querySelector('.nav-links');
+        function toggleMenu() {
+            navLinks.classList.toggle('active');
+        }
+
+        // Upgraded Video Lightbox Functionality
+        function openVideoLightbox(videoUrl) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxVideo = document.getElementById("lightbox-video");
+            
+            lightbox.style.display = "flex";
+            lightboxVideo.src = videoUrl; // Loads the YouTube video
+            document.body.style.overflow = "hidden"; // Stops background scrolling
+        }
+
+        function closeLightbox(event) {
+            // Prevents closing if the user clicks directly on the video player itself
+            if(event && event.target.id === 'lightbox-video') return; 
+
+            const lightbox = document.getElementById("lightbox");
+            const lightboxVideo = document.getElementById("lightbox-video");
+            
+            lightbox.style.display = "none";
+            lightboxVideo.src = ""; // STOPS the video audio from playing in the background
+            document.body.style.overflow = "auto"; // Turns background scrolling back on
+        }
+    </script>
+
+    <script src="theme-toggle.js"></script>
+</body>
+</html>
