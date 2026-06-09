@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta name="description" content="Freelance photographer and videographer based in Penang, Malaysia. Specializing in live events, cinematic videos, portraits, and wildlife photography.">
-    <meta name="keywords" content="Penang photographer, event videography Penang, portrait photography Malaysia, cinematic video Penang, JN.CR3, Jason Ng">
-    <meta name="author" content="Jason Ng">
-
-    <meta property="og:title" content="Jason Ng | Photographer & Videographer">
-    <meta property="og:description" content="Compelling visual storytelling based in Penang, Malaysia.">
-    <meta property="og:url" content="https://jason10082.github.io/jn.cr3/">
-    <meta property="og:type" content="website">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason Ng | Photographer & Videographer</title>
     <link rel="stylesheet" href="styles.css">
+
+    <meta name="description" content="Freelance photographer and videographer based in Penang, Malaysia. Specializing in live events, cinematic videos, portraits, and wildlife photography.">
+    <meta name="keywords" content="Penang photographer, event videography Penang, portrait photography Malaysia, cinematic video Penang, JN.CR3, Jason Ng">
+    <meta name="author" content="Jason Ng">
+    <meta property="og:title" content="Jason Ng | Photographer & Videographer">
+    <meta property="og:description" content="Compelling visual storytelling based in Penang, Malaysia.">
+    <meta property="og:url" content="https://jason10082.github.io/jn.cr3/">
+    <meta property="og:type" content="website">
 </head>
 <body>
     <header>
@@ -25,7 +25,7 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#work">Selected Works</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="gear.html">Gear</a></li> <!-- ADDED GEAR PAGE LINK -->
+                    <li><a href="gear.html">Gear</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -33,93 +33,91 @@
         </div>
     </header>
 
-    <section id="home" class="hero">
-        <div>
-            <h2>Capturing the Extraordinary</h2>
-            <p>Freelance Photographer & Videographer based in Penang, Malaysia.</p>
-        </div>
-    </section>
+    <main>
+        <section id="home" class="hero">
+            <div>
+                <h2>Capturing the Extraordinary</h2>
+                <p>Freelance Photographer & Videographer based in Penang, Malaysia.</p>
+            </div>
+        </section>
 
-    <section id="work" class="page-header">
-        <h2>Selected Works</h2>
-        <p>A curated collection of recent projects</p>
-    </section>
-    
- <section class="gallery-container">
-        <div class="category-grid">
-            
+        <section id="work" class="page-header">
+            <h2>Selected Works</h2>
+            <p>A curated collection of recent projects</p>
+        </section>
+        
+        <section class="category-grid">
             <div class="category-item">
                 <a href="Portrait.html">
-                    <img src="images/Portraits/6W8A1399 (Phone).jpg" alt="Portraits">
+                    <img src="images/Portraits/6W8A1399-Phone.jpg" alt="Portraits">
                     <span class="category-title">Portraits</span>
                 </a>
             </div>
             
             <div class="category-item">
                 <a href="Event.html">
-                    <img src="images/Event/Edited/6W8A3395 (Phone).jpg" alt="Events">
+                    <img src="images/Event/Edited/6W8A3395-Phone.jpg" alt="Events">
                     <span class="category-title">Events</span>
                 </a>
             </div>
             
             <div class="category-item">
                 <a href="Wildlife.html">
-                    <img src="images/Wildlife/IMG_0251 (Phone).jpg" alt="Wildlife">
+                    <img src="images/Wildlife/IMG_0251-Phone.jpg" alt="Wildlife">
                     <span class="category-title">Wildlife</span>
                 </a>
             </div>
             
             <div class="category-item">
                 <a href="Cinematic.html">
-                    <img src="images/Video/compressed file & gif/Holly Horror trailer gif.gif" alt="Cinematic Videos">
+                    <img src="images/Video/compressed-files/Holly-Horror-trailer-gif.gif" alt="Cinematic Videos">
                     <span class="category-title">Cinematography</span>
                 </a>
             </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="images/Profile-pic/6W8A3913.jpg" alt="Jason Ng">
+                </div>
+                <div class="about-text">
+                    <h2>About Jason</h2>
+                    <p>I am a freelance photographer and videographer based in Penang, Malaysia. I specialize in capturing the raw energy of live events, crafting story-driven cinematic videos, and framing award-winning wildlife moments.</p>
+                    <p>Whether I am shooting a fast-paced event or a carefully directed portrait session, my goal is always to deliver striking, high-impact visuals that tell a compelling story.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="contact-header">
+                <h2>Let's Work Together</h2>
+                <p>Available for freelance projects, collaborations, and commercial shoots.</p>
+            </div>
             
-        </div>
-    </section>
+            <div class="contact-container">
+                <form class="contact-form" action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <select name="project_type" required>
+                        <option value="" disabled selected>Project Type</option>
+                        <option value="event">Event Coverage</option>
+                        <option value="portrait">Portrait Session</option>
+                        <option value="video">Cinematography / Video</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <textarea name="message" placeholder="Tell me about your project..." rows="5" required></textarea>
+                    <button type="submit" class="btn-primary">Send Inquiry</button>
+                </form>
 
-<section id="about" class="about-section">
-        <div class="about-content">
-            <div class="about-image">
-                <img src="images/Profile pic/6W8A3913.jpg" alt="Jason Ng">
+                <div class="contact-socials">
+                    <h3>Connect</h3>
+                    <a href="https://www.instagram.com/jn.cr3/" target="_blank" class="social-link">Instagram: @jn.cr3</a>
+                    <a href="mailto:jason10082.jn10082@gmail.com" class="social-link">Email Me</a>
+                </div>
             </div>
-            <div class="about-text">
-                <h2>About Jason</h2>
-                <p>I am a freelance photographer and videographer based in Penang, Malaysia. I specialize in capturing the raw energy of live events, crafting story-driven cinematic videos, and framing award-winning wildlife moments.</p>
-                <p>Whether I am shooting a fast-paced event or a carefully directed portrait session, my goal is always to deliver striking, high-impact visuals that tell a compelling story.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-        <div class="contact-header">
-            <h2>Let's Work Together</h2>
-            <p>Available for freelance projects, collaborations, and commercial shoots.</p>
-        </div>
-        
-        <div class="contact-container">
-            <form class="contact-form" action="#" method="POST">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <select required>
-                    <option value="" disabled selected>Project Type</option>
-                    <option value="event">Event Coverage</option>
-                    <option value="portrait">Portrait Session</option>
-                    <option value="video">Cinematography / Video</option>
-                    <option value="other">Other</option>
-                </select>
-                <textarea placeholder="Tell me about your project..." rows="5" required></textarea>
-                <button type="submit" class="btn-primary">Send Inquiry</button>
-            </form>
-
-            <div class="contact-socials">
-                <h3>Connect</h3>
-                <a href="https://www.instagram.com/jn.cr3/" target="_blank" class="social-link">Instagram: @jn.cr3</a>
-                <a href="mailto:jason10082.jn10082@gmail.com" class="social-link">Email Me</a>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Jason Ng Photography</p>
