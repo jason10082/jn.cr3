@@ -858,32 +858,33 @@ footer {
         right: 25px; 
     }
 
-    /* --- The Upgraded Slide-Out Sidebar --- */
+
+@media (max-width: 768px) {
+
     .nav-container { 
         position: fixed;
         top: 0;
-        right: 0; /* Firmly locks the menu to the right edge of the phone */
-        transform: translateX(100%); /* Safely slides it out of view */
-        width: 75vw; /* Slightly narrower so it breathes well */
-        max-width: 320px;
-        height: 100%; /* Uses % instead of vh to fix Instagram browser bugs */
+        right: -80%; /* Start completely off-screen */
+        width: 80%; 
+        height: 100vh;
         background-color: var(--bg-color);
+        display: flex;
         flex-direction: column; 
         justify-content: center;
         align-items: center;
         gap: 40px; 
         padding: 40px 20px;
         z-index: 2000;
-        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        border-bottom: none;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
 
-    /* This class triggers the perfect slide-in */
+    /* Trigger the slide-in */
     .nav-container.active {
-        transform: translateX(0); 
+        right: 0;
     }
-
+}
+    
     .nav-links ul { 
         flex-direction: column; 
         text-align: center; 
@@ -908,11 +909,11 @@ footer {
     .about-image { flex: 0 0 auto; max-width: 260px; margin-bottom: 20px; }
     .about-text h2::after { margin: 20px auto 0; }
     
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
+.contact-container a {
+    word-break: break-all;
+    display: inline-block;
+    max-width: 100%;
+}
 
     /* --- Pricing/Services Fixes --- */
     .pricing-card {
