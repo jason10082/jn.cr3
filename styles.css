@@ -23,6 +23,11 @@
     padding: 0;
 }
 
+/* Smooth Scrolling for Anchor Links */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     background-color: var(--bg-color);
@@ -343,23 +348,6 @@ header {
     color: var(--text-main);
 }
 
-/* --- Responsive layout for smaller screens --- */
-@media (max-width: 1024px) {
-    .photo-grid { 
-        column-count: 2; /* Drops to 2 columns on tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    header { flex-direction: column; gap: 20px; padding: 20px; }
-    .nav-container { flex-direction: column; gap: 20px; }
-    .nav-links ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
-    
-    .photo-grid { 
-        column-count: 1; /* Drops to a single column on mobile phones */
-    }
-}
-
 /* --- Main Page Hero Section --- */
 .hero {
     height: 50vh;
@@ -550,7 +538,6 @@ footer {
 }
 
 /* --- Main Page Category Text Overlays --- */
-
 .category-title {
     position: absolute;
     top: 50%;
@@ -790,23 +777,115 @@ footer {
     line-height: 1.8;
 }
 
-/* Mobile Adjustments for Pricing */
-@media (max-width: 768px) {
-    .pricing-card {
-        padding: 30px;
-    }
-    .faq-item {
-        padding-left: 20px;
+/* =========================================
+   MOBILE SIDEBAR MENU CLASSES
+   ========================================= */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 2px;
+    background-color: var(--text-main);
+    transition: 0.3s ease;
+}
+
+.close-menu {
+    display: none;
+    font-size: 45px;
+    color: var(--text-main);
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    z-index: 1500;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.menu-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* =========================================
+   CONSOLIDATED RESPONSIVE QUERIES
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .photo-grid { 
+        column-count: 2; /* Drops to 2 columns on tablets */
     }
 }
 
-
 @media (max-width: 768px) {
-    header { flex-direction: column; gap: 20px; padding: 20px; }
-    .nav-container { flex-direction: column; gap: 20px; }
-    .nav-links ul { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    /* --- Mobile Header Fixes --- */
+    header { 
+        flex-direction: row; 
+        justify-content: space-between; 
+        padding: 20px 5%; 
+    }
     
-    .photo-grid { column-count: 1; } /* For subpages */
+    .hamburger { display: flex; }
+    .close-menu { display: block; }
+
+    /* --- The Slide-Out Sidebar --- */
+    .nav-container { 
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hides the menu completely off-screen to the right */
+        width: 80vw;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--bg-color);
+        flex-direction: column; 
+        justify-content: center;
+        align-items: center;
+        gap: 40px; 
+        padding: 40px;
+        z-index: 2000;
+        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1); /* Smooth cinematic slide */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        border-bottom: none;
+    }
+
+    /* This class triggers the slide-in */
+    .nav-container.active {
+        right: 0;
+    }
+
+    .nav-links ul { 
+        flex-direction: column; 
+        text-align: center; 
+        gap: 30px; 
+    }
+
+    .nav-links a {
+        font-size: 1.3rem; /* Makes text larger for easier thumb tapping */
+    }
+
+    /* --- General Layout Fixes --- */
+    .hero h2 { font-size: 2.5rem; }
+    .category-grid { grid-template-columns: 1fr; }
+    .photo-grid { column-count: 1; }
     
     .about-content {
         flex-direction: column;
@@ -814,9 +893,21 @@ footer {
         gap: 30px;
     }
     
+    .about-image { flex: 0 0 auto; max-width: 260px; margin-bottom: 20px; }
+    .about-text h2::after { margin: 20px auto 0; }
+    
     .contact-container {
         grid-template-columns: 1fr;
         gap: 40px;
         text-align: center;
+    }
+
+    /* --- Pricing/Services Fixes --- */
+    .pricing-card {
+        padding: 30px;
+    }
+    
+    .faq-item {
+        padding-left: 20px;
     }
 }
