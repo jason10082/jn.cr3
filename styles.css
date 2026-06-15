@@ -697,6 +697,109 @@ footer {
     line-height: 1.6;
 }
 
+/* =========================================
+   SERVICES & PRICING PAGE
+   ========================================= */
+
+.services-header::before {
+    content: "SECTION // 03";
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 100px;
+}
+
+.pricing-card {
+    border: 1px solid var(--border-color);
+    padding: 40px;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-main);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+[data-theme="dark"] .pricing-card:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+}
+
+.pricing-card h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.pricing-price {
+    font-family: "Courier New", monospace;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.pricing-card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 10px;
+    line-height: 1.8;
+}
+
+.pricing-card strong {
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+/* --- FAQ / Boundaries Section --- */
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 5% 80px;
+}
+
+.faq-item {
+    border-left: 2px solid var(--text-main);
+    padding-left: 30px;
+    margin-bottom: 40px;
+}
+
+.faq-item h3 {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.faq-item p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+/* Mobile Adjustments for Pricing */
+@media (max-width: 768px) {
+    .pricing-card {
+        padding: 30px;
+    }
+    .faq-item {
+        padding-left: 20px;
+    }
+}
+
 
 @media (max-width: 768px) {
     header { flex-direction: column; gap: 20px; padding: 20px; }
