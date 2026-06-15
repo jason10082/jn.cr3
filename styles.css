@@ -23,6 +23,11 @@
     padding: 0;
 }
 
+/* --- MOBILE LAYOUT FIX: Prevents side-scrolling --- */
+html, body {
+    overflow-x: hidden;
+}
+
 /* Smooth Scrolling for Anchor Links */
 html {
     scroll-behavior: smooth;
@@ -845,31 +850,38 @@ footer {
     }
     
     .hamburger { display: flex; }
-    .close-menu { display: block; }
+    
+    .close-menu { 
+        display: block; 
+        position: absolute;
+        top: 20px;
+        right: 25px; 
+    }
 
-    /* --- The Slide-Out Sidebar --- */
+    /* --- The Upgraded Slide-Out Sidebar --- */
     .nav-container { 
         position: fixed;
         top: 0;
-        right: -100%; /* Hides the menu completely off-screen to the right */
-        width: 80vw;
-        max-width: 350px;
-        height: 100vh;
+        right: 0; /* Firmly locks the menu to the right edge of the phone */
+        transform: translateX(100%); /* Safely slides it out of view */
+        width: 75vw; /* Slightly narrower so it breathes well */
+        max-width: 320px;
+        height: 100%; /* Uses % instead of vh to fix Instagram browser bugs */
         background-color: var(--bg-color);
         flex-direction: column; 
         justify-content: center;
         align-items: center;
         gap: 40px; 
-        padding: 40px;
+        padding: 40px 20px;
         z-index: 2000;
-        transition: right 0.4s cubic-bezier(0.77, 0.2, 0.05, 1); /* Smooth cinematic slide */
+        transition: transform 0.4s cubic-bezier(0.77, 0.2, 0.05, 1);
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         border-bottom: none;
     }
 
-    /* This class triggers the slide-in */
+    /* This class triggers the perfect slide-in */
     .nav-container.active {
-        right: 0;
+        transform: translateX(0); 
     }
 
     .nav-links ul { 
