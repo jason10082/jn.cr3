@@ -4,132 +4,185 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Coverage | JN.CR3</title>
+    
+    <!-- Added Google Fonts to match the new Editorial Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- UPDATED HEADER: Matches index.html and links back to the main page correctly -->
     <header>
         <div class="logo">
-            <a href="index.html"><h1>JN.CR3</h1></a>
+            <a href="index.html">JN.CR3</a>
         </div>
-        <div class="nav-container">
+        
+        <!-- Desktop Nav -->
+        <nav class="desktop-nav">
+            <a href="index.html#about">About</a>
+            <a href="index.html#work">Works</a>
+            <a href="index.html#pricing">Rates</a>
+            <a href="gear.html">Kit</a>
+            <a href="#contact">Contact</a>
+            <button class="pill-btn theme-toggle-btn" style="margin-left: 10px;">Dark Mode</button>
+        </nav>
+
+        <!-- Mobile Menu Trigger -->
+        <div class="menu-trigger" id="hamburger">
+            <span>Menu</span>
+        </div>
+
+        <!-- Mobile Overlay Menu -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+        <div class="nav-container" id="nav-container">
+            <div class="close-menu" id="close-menu">&times;</div>
             <nav class="nav-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#work">Selected Works</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="gear.html">Gear</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                </ul>
+                <a href="index.html#about" class="nav-item">About</a>
+                <a href="index.html#work" class="nav-item">Works</a>
+                <a href="index.html#pricing" class="nav-item">Rates</a>
+                <a href="gear.html" class="nav-item">Gear</a>
+                <a href="#contact" class="nav-item">Contact</a>
             </nav>
-            
-            <button id="theme-toggle">Dark Mode</button>
+            <button class="pill-btn theme-toggle-btn">Dark Mode</button>
         </div>
     </header>
 
-    <section class="page-header">
-        <h2>Event Coverage</h2>
-        <p>Capturing the energy, scale, and atmosphere of live moments.</p>
-    </section>
+    <main>
+        <!-- UPDATED PAGE HEADER: Uses massive-text and container classes -->
+        <section class="page-header container">
+            <h1 class="massive-text">EVENTS</h1>
+            <p class="subtitle">Capturing the energy, scale, and atmosphere of live moments.</p>
+        </section>
 
-    <section class="gallery-container">
-        <div class="photo-grid">
-            
-            <div class="photo-item">
-                <img src="images/Event/20240505082359_IMG_0562.jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/20240505104914_IMG_0679 (1).jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/IMG_0602.jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/IMG_0805 (2).jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/IMG_8953-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/IMG_8618.jpg" alt="Event Photo">
-            </div>
-            
-            <div class="photo-item">
-                <img src="images/Event/IMG_8932-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+        <!-- ADDED CONTAINER CLASS: Stops the gallery from stretching too wide on desktop -->
+        <section class="gallery-container container">
+            <div class="photo-grid">
+                
+                <div class="photo-item">
+                    <img src="images/Event/20240505082359_IMG_0562.jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/20240505104914_IMG_0679 (1).jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/IMG_0602.jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/IMG_0805 (2).jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/IMG_8953-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/IMG_8618.jpg" alt="Event Photo">
+                </div>
+                
+                <div class="photo-item">
+                    <img src="images/Event/IMG_8932-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/20240628195859_IMG_4288 (1).jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/20240628195859_IMG_4288 (1).jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A2620-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A2620-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A2646-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A2646-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3301.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3301.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3280.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3280.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3515-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3515-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3674.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3674.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/IMG_0362-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/IMG_0362-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/IMG_0304.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/IMG_0304.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/IMG_0384-Enhanced-NR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/IMG_0384-Enhanced-NR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3270-Enhanced-SR.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3270-Enhanced-SR.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3425.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3425.jpg" alt="Event Photo">
+                </div>
 
-            <div class="photo-item">
-                <img src="images/Event/Edited/6W8A3301.jpg" alt="Event Photo">
-            </div>
+                <div class="photo-item">
+                    <img src="images/Event/Edited/6W8A3301.jpg" alt="Event Photo">
+                </div>
 
             </div>
-    </section>
+        </section>
+    </main>
 
-    <footer>
-        <p>&copy; 2026 Jason Ng Photography</p>
+    <!-- UPDATED FOOTER: Matches the giant editorial layout -->
+    <footer id="contact" class="container">
+        <div class="footer-top">
+            <div>
+                <p>Say hello &#128075;</p>
+                <a href="mailto:jason10082.jn10082@gmail.com" class="footer-email">jason10082.jn10082@gmail.com</a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/jn.cr3/" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <h1 class="giant-footer-text">JN.CR3</h1>
     </footer>
 
+    <!-- UPDATED SCRIPT: Matches the new slide-out mobile menu mechanics -->
     <script>
-        // Mobile Menu Toggle
-        const navLinks = document.querySelector('.nav-links');
-        function toggleMenu() {
-            navLinks.classList.toggle('active');
-        }
-    </script>
+        const hamburger = document.getElementById('hamburger');
+        const navContainer = document.getElementById('nav-container');
+        const closeMenu = document.getElementById('close-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const navItems = document.querySelectorAll('.nav-item');
 
+        function toggleMenu() {
+            navContainer.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            document.body.style.overflow = navContainer.classList.contains('active') ? 'hidden' : 'auto';
+        }
+
+        function closeMenuFunc() {
+            navContainer.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        hamburger.addEventListener('click', toggleMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        menuOverlay.addEventListener('click', closeMenuFunc);
+        navItems.forEach(item => item.addEventListener('click', closeMenuFunc));
+    </script>
     <script src="theme-toggle.js"></script>
 </body>
 </html>
