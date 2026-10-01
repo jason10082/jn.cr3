@@ -1,33 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Gear | Jason Ng</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Gear | Jason Ng Photography</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- PROPER HOMEPAGE HEADER -->
+<!-- RESTORED HEADER/NAVIGATION -->
 <header>
     <div class="logo">
         <a href="index.html"><h1>JN.CR3</h1></a>
     </div>
-    <div class="nav-container">
+    
+    <!-- Hamburger Icon (Only visible on mobile) -->
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <!-- Dimmed Background Overlay -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+
+    <!-- The Navigation Sidebar -->
+    <div class="nav-container" id="nav-container">
+        <div class="close-menu" id="close-menu">&times;</div>
         <nav class="nav-links">
             <ul>
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#work">Selected Works</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="gear.html">Gear</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html#home" class="nav-item">Home</a></li>
+                <li><a href="index.html#work" class="nav-item">Selected Works</a></li>
+                <li><a href="index.html#pricing" class="nav-item">Rates</a></li>
+                <li><a href="index.html#about" class="nav-item">About</a></li>
+                <li><a href="gear.html" class="nav-item">Gear</a></li>
+                <li><a href="service.html" class="nav-item">Services</a></li>
+                <li><a href="index.html#contact" class="nav-item">Contact</a></li>
             </ul>
         </nav>
         <button id="theme-toggle">Dark Mode</button>
     </div>
 </header>
-
+  
 <!-- HEADER SECTION -->
 <section class="page-header gear-header">
     <h2>The Kit</h2>
@@ -93,14 +107,14 @@
         </div>
 
         <div class="gear-card">
-            <div class="gear-image"><img src="images/Gear/rf_s_18_45mm.jpg" alt="RF-S 18-45"></div>
+            <div class="gear-image"><img src="images/Gear/ef_16_35mm.jpg" alt="Canon EF 16-35mm f/4"></div>
             <div class="gear-info">
-                <div class="gear-brand">Canon RF-S</div>
-                <h4 class="gear-name">18-45mm f/4.5-6.3 IS STM</h4>
-                <p class="gear-desc">The ultra-compact kit lens paired perfectly with the R50. Ideal for lightweight, run-and-gun setups and wide-angle vlogging.</p>
+                <div class="gear-brand">Canon EF</div>
+                <h4 class="gear-name">16-35mm f/4L IS USM</h4>
+                <p class="gear-desc">An ultra-wide L-series zoom delivering exceptional sharpness and image stabilization. Perfect for expansive landscapes, tight event venues, and architectural shots.</p>
             </div>
         </div>
-
+        
     </div>
 </section>
 
@@ -203,6 +217,39 @@
 <footer>
     <p>&copy; 2026 Jason Ng Photography</p>
 </footer>
+
+<!-- RESTORED SIDEBAR MENU SCRIPT -->
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navContainer = document.getElementById('nav-container');
+    const closeMenu = document.getElementById('close-menu');
+    const menuOverlay = document.getElementById('menu-overlay');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    function openMenu() {
+        if(navContainer && menuOverlay) {
+            navContainer.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+    }
+
+    function closeMenuFunc() {
+        if(navContainer && menuOverlay) {
+            navContainer.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto'; 
+        }
+    }
+
+    if(hamburger) hamburger.addEventListener('click', openMenu);
+    if(closeMenu) closeMenu.addEventListener('click', closeMenuFunc);
+    if(menuOverlay) menuOverlay.addEventListener('click', closeMenuFunc);
+
+    navItems.forEach(item => {
+        item.addEventListener('click', closeMenuFunc);
+    });
+</script>
 
 <script src="theme-toggle.js"></script>
 
