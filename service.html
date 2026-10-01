@@ -14,15 +14,28 @@
         <div class="logo">
             <a href="index.html"><h1>JN.CR3</h1></a>
         </div>
-        <div class="nav-container">
+        
+        <!-- Hamburger Icon (Only visible on mobile) -->
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <!-- Dimmed Background Overlay -->
+        <div class="menu-overlay" id="menu-overlay"></div>
+
+        <!-- The Navigation Sidebar -->
+        <div class="nav-container" id="nav-container">
+            <div class="close-menu" id="close-menu">&times;</div>
             <nav class="nav-links">
                 <ul>
-                    <li><a href="index.html#home">Home</a></li>
-                    <li><a href="index.html#work">Selected Works</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="gear.html">Gear</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#home" class="nav-item">Home</a></li>
+                    <li><a href="index.html#work" class="nav-item">Selected Works</a></li>
+                    <li><a href="index.html#about" class="nav-item">About</a></li>
+                    <li><a href="gear.html" class="nav-item">Gear</a></li>
+                    <li><a href="services.html" class="nav-item">Services</a></li>
+                    <li><a href="index.html#contact" class="nav-item">Contact</a></li>
                 </ul>
             </nav>
             <button id="theme-toggle">Dark Mode</button>
@@ -91,6 +104,38 @@
         <p>&copy; 2026 Jason Ng</p>
     </footer>
 
+    <!-- Sidebar Menu Logic -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navContainer = document.getElementById('nav-container');
+        const closeMenu = document.getElementById('close-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        function openMenu() {
+            if(navContainer && menuOverlay) {
+                navContainer.classList.add('active');
+                menuOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            }
+        }
+
+        function closeMenuFunc() {
+            if(navContainer && menuOverlay) {
+                navContainer.classList.remove('active');
+                menuOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto'; 
+            }
+        }
+
+        if(hamburger) hamburger.addEventListener('click', openMenu);
+        if(closeMenu) closeMenu.addEventListener('click', closeMenuFunc);
+        if(menuOverlay) menuOverlay.addEventListener('click', closeMenuFunc);
+
+        navItems.forEach(item => {
+            item.addEventListener('click', closeMenuFunc);
+        });
+    </script>
     <script src="theme-toggle.js"></script>
 </body>
 </html>
