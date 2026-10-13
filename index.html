@@ -30,16 +30,16 @@
         <!-- Dimmed Background Overlay -->
         <div class="menu-overlay" id="menu-overlay"></div>
 
-        <!-- The Navigation Sidebar -->
+        <!-- The Navigation Sidebar / Desktop Nav -->
         <div class="nav-container" id="nav-container">
             <div class="close-menu" id="close-menu">&times;</div>
             <nav class="nav-links">
                 <ul>
                     <li><a href="#home" class="nav-item">Home</a></li>
                     <li><a href="#work" class="nav-item">Selected Works</a></li>
+                    <li><a href="#pricing" class="nav-item">Rates</a></li>
                     <li><a href="#about" class="nav-item">About</a></li>
                     <li><a href="gear.html" class="nav-item">Gear</a></li>
-                    <li><a href="service.html" class="nav-item">Services</a></li>
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
             </nav>
@@ -48,22 +48,28 @@
     </header>
 
     <main>
+        <!-- HERO -->
         <section id="home" class="hero">
             <div>
                 <h2>Capturing the Extraordinary</h2>
                 <p>Freelance Photographer & Videographer based in Penang, Malaysia.</p>
+                <div class="hero-buttons">
+                    <a href="#work" class="btn-primary">View Works</a>
+                    <a href="#pricing" class="btn-secondary">Rates & Packages</a>
+                </div>
             </div>
         </section>
 
+        <!-- SELECTED WORKS HEADER -->
         <section id="work" class="page-header">
             <h2>Selected Works</h2>
             <p>A curated collection of recent projects</p>
         </section>
         
+        <!-- SELECTED WORKS GRID -->
         <section class="category-grid">
             <div class="category-item">
                 <a href="Portrait.html">
-                    <!-- Image paths updated with hyphens for GitHub compatibility -->
                     <img src="images/Portraits/6W8A1399 (Phone).jpg" alt="Portraits">
                     <span class="category-title">Portraits</span>
                 </a>
@@ -91,6 +97,52 @@
             </div>
         </section>
 
+        <!-- PRICING & RATES SECTION -->
+        <section id="pricing" class="page-header">
+            <h2>Services & Rates</h2>
+            <p>Penang, MY</p>
+        </section>
+
+        <!-- Pricing Grid -->
+        <section class="pricing-grid">
+            <div class="pricing-card">
+                <h3>Half-Day</h3>
+                <div class="pricing-price">RM 850</div>
+                <p>Up to 4 hours. Perfect for corporate functions, half-day seminars, and brand activations.</p>
+            </div>
+            
+            <div class="pricing-card">
+                <h3>Full-Day</h3>
+                <div class="pricing-price">RM 1,600</div>
+                <p>Up to 8 hours. Comprehensive coverage for full-day corporate events and large functions.</p>
+            </div>
+
+            <div class="pricing-card featured">
+                <h3>Second Shooter</h3>
+                <div class="pricing-price">RM 600+</div>
+                <p>Per day. For main wedding studios requiring a reliable shooter with a Canon R6 Mark II & f/2.8 glass.</p>
+            </div>
+        </section>
+
+        <!-- FAQ Grid -->
+        <section class="faq-section">
+            <div class="faq-item">
+                <h4>Travel & Outstation</h4>
+                <p>Standard rates include travel within Penang Island and immediate mainland areas. For outstation events:</p>
+                <ul>
+                    <li><strong>Up to 40km:</strong> No extra charge</li>
+                    <li><strong>41km to 80km:</strong> RM 50 flat rate</li>
+                    <li><strong>Beyond 80km:</strong> Custom quote provided upon inquiry</li>
+                </ul>
+            </div>
+
+            <div class="faq-item">
+                <h4>Main Wedding Photography?</h4>
+                <p>At this time, I am strictly focusing on private events, corporate functions, and working as a second shooter alongside established studios. I am not taking on solo, main-photographer wedding bookings. However, pre-wedding events, engagements, or private dinners are always welcome!</p>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
         <section id="about" class="about-section">
             <div class="about-content">
                 <div class="about-image">
@@ -100,27 +152,28 @@
                     <h2>About Jason</h2>
                     <p>I am a freelance photographer and videographer based in Penang, Malaysia. I specialize in capturing the raw energy of live events, crafting story-driven cinematic videos, and framing award-winning wildlife moments.</p>
                     <p>Whether I am shooting a fast-paced event or a carefully directed portrait session, my goal is always to deliver striking, high-impact visuals that tell a compelling story.</p>
+                    <a href="gear.html" class="btn-secondary" style="margin-top: 10px;">View My Gear &rarr;</a>
                 </div>
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section id="contact" class="contact-section">
             <div class="contact-header">
                 <h2>Let's Work Together</h2>
                 <p>Available for freelance projects, collaborations, and commercial shoots.</p>
             </div>
             
-            <!-- Minimalist Email Contact Section -->
-            <div class="contact-container" style="grid-template-columns: 1fr; text-align: center;">
-                <div style="margin-bottom: 40px;">
-                    <p style="color: var(--text-muted); font-size: 1.2rem; margin-bottom: 10px;">For bookings and inquiries, email me directly at:</p>
-                    <a href="mailto:jason10082.jn10082@gmail.com" style="font-size: 2.5rem; font-weight: bold; color: var(--text-main); text-decoration: none; border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; transition: opacity 0.3s ease;">
+            <div class="contact-container">
+                <div class="contact-email-box">
+                    <p>For bookings and inquiries, email me directly at:</p>
+                    <a href="mailto:jason10082.jn10082@gmail.com" class="contact-email">
                         jason10082.jn10082@gmail.com
                     </a>
                 </div>
 
-                <div class="contact-socials" style="display: flex; justify-content: center; gap: 30px;">
-                    <a href="https://www.instagram.com/jn.cr3/" target="_blank" class="social-link" style="margin: 0;">Instagram: @jn.cr3</a>
+                <div class="contact-socials">
+                    <a href="https://www.instagram.com/jn.cr3/" target="_blank" class="social-link">Instagram: @jn.cr3</a>
                 </div>
             </div>
         </section>
