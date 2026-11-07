@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +13,14 @@
     <meta property="og:description" content="Compelling visual storytelling based in Penang, Malaysia.">
     <meta property="og:url" content="https://jason10082.github.io/jn.cr3/">
     <meta property="og:type" content="website">
+
+    <!-- Force Dark Mode as Default on First Visit -->
+    <script>
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+    </script>
 </head>
 <body>
     <header>
@@ -30,7 +38,7 @@
         <!-- Dimmed Background Overlay -->
         <div class="menu-overlay" id="menu-overlay"></div>
 
-        <!-- The Navigation Sidebar / Desktop Nav -->
+        <!-- The Navigation Sidebar -->
         <div class="nav-container" id="nav-container">
             <div class="close-menu" id="close-menu">&times;</div>
             <nav class="nav-links">
@@ -43,7 +51,7 @@
                     <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
             </nav>
-            <button id="theme-toggle">Dark Mode</button>
+            <button id="theme-toggle">Light Mode</button>
         </div>
     </header>
 
@@ -53,10 +61,6 @@
             <div>
                 <h2>Capturing the Extraordinary</h2>
                 <p>Freelance Photographer & Videographer based in Penang, Malaysia.</p>
-                <div class="hero-buttons">
-                    <a href="#work" class="btn-primary">View Works</a>
-                    <a href="#pricing" class="btn-secondary">Rates & Packages</a>
-                </div>
             </div>
         </section>
 
@@ -152,7 +156,7 @@
                     <h2>About Jason</h2>
                     <p>I am a freelance photographer and videographer based in Penang, Malaysia. I specialize in capturing the raw energy of live events, crafting story-driven cinematic videos, and framing award-winning wildlife moments.</p>
                     <p>Whether I am shooting a fast-paced event or a carefully directed portrait session, my goal is always to deliver striking, high-impact visuals that tell a compelling story.</p>
-                    <a href="gear.html" class="btn-secondary" style="margin-top: 10px;">View My Gear &rarr;</a>
+                    <a href="gear.html" class="btn-primary" style="margin-top: 10px;">My Gear &rarr;</a>
                 </div>
             </div>
         </section>
@@ -165,15 +169,24 @@
             </div>
             
             <div class="contact-container">
-                <div class="contact-email-box">
-                    <p>For bookings and inquiries, email me directly at:</p>
-                    <a href="mailto:jason10082.jn10082@gmail.com" class="contact-email">
+                <div style="margin-bottom: 32px;">
+                    <p style="color: var(--text-muted); font-size: 1.05rem; margin-bottom: 12px;">For bookings and inquiries, email me directly at:</p>
+                    <a href="mailto:jason10082.jn10082@gmail.com">
                         jason10082.jn10082@gmail.com
                     </a>
                 </div>
 
                 <div class="contact-socials">
                     <a href="https://www.instagram.com/jn.cr3/" target="_blank" class="social-link">Instagram: @jn.cr3</a>
+                </div>
+
+                <!-- Color Palette Pill Bar -->
+                <div class="palette-bar" aria-hidden="true">
+                    <span class="palette-swatch" style="background: #E61919;"></span>
+                    <span class="palette-swatch" style="background: #FF4D2D;"></span>
+                    <span class="palette-swatch" style="background: #B8DFF0;"></span>
+                    <span class="palette-swatch" style="background: #18181E; border: 1px solid rgba(184,223,240,0.3);"></span>
+                    <span class="palette-swatch" style="background: #E61919;"></span>
                 </div>
             </div>
         </section>
