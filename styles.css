@@ -44,7 +44,7 @@ body.light-mode {
     --shadow-card: 0 12px 30px rgba(9, 9, 11, 0.08);
 }
 
-/* RESET & BASE */
+
 * {
     box-sizing: border-box;
     margin: 0;
