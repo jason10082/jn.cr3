@@ -1,35 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinematography | JN.CR3</title>
     <link rel="stylesheet" href="styles.css">
+
+    <script>
+        if (!localStorage.getItem('theme')) {
+            localStorage.setItem('theme', 'dark');
+        }
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('theme') || 'dark');
+    </script>
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html"><h1>JN.CR3</h1></a>
         </div>
-        <div class="nav-container">
+        
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="menu-overlay" id="menu-overlay"></div>
+
+        <div class="nav-container" id="nav-container">
+            <div class="close-menu" id="close-menu">&times;</div>
             <nav class="nav-links">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#work">Selected Works</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="gear.html">Gear</a></li>
-                    <li><a href="service.html">Services</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#home" class="nav-item">Home</a></li>
+                    <li><a href="index.html#work" class="nav-item">Selected Works</a></li>
+                    <li><a href="index.html#pricing" class="nav-item">Rates</a></li>
+                    <li><a href="index.html#about" class="nav-item">About</a></li>
+                    <li><a href="gear.html" class="nav-item">Gear</a></li>
+                    <li><a href="index.html#contact" class="nav-item">Contact</a></li>
                 </ul>
             </nav>
-            
-            <div class="hamburger" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            
-            <button id="theme-toggle">Dark Mode</button>
+            <button id="theme-toggle">Light Mode</button>
         </div>
     </header>
 
@@ -38,25 +48,37 @@
         <p>Story-driven interviews, dynamic edits, and high-energy visuals.</p>
     </section>
 
- <section class="gallery-container">
+    <section class="gallery-container">
         <div class="video-grid">
             
-            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/i9Ve3kO7YxM?autoplay=1')">
-                <img src="images/Video/compressed file & gif/Holly Horror trailer gif.gif" alt="Cinematic Project 1">
-                <div class="play-icon">▶</div>
+            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/i9Ve3kO7YxM?autoplay=1&rel=0')">
+                <img src="images/Video/compressed file & gif/Holly Horror trailer gif.gif" alt="Holly Horror Trailer">
+                <div class="play-icon">&#9654;</div>
             </div>
             
-            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/Y47jc6WfKAk?autoplay=1')">
-                <img src="images/Video/compressed file & gif/Rooted in Heritage gif.gif" alt="Cinematic Project 2">
-                <div class="play-icon">▶</div>
+            <div class="video-item" onclick="openVideoLightbox('https://www.youtube.com/embed/Y47jc6WfKAk?autoplay=1&rel=0')">
+                <img src="images/Video/compressed file & gif/Rooted in Heritage gif.gif" alt="Rooted in Heritage">
+                <div class="play-icon">&#9654;</div>
             </div>
 
         </div>
     </section>
 
+    <!-- Video Lightbox Modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
-        <span class="close-btn">&times;</span>
-        <iframe class="lightbox-content video-frame" id="lightbox-video" src="" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        <span class="close-btn" onclick="closeLightbox(event)">&times;</span>
+        <div class="video-wrapper">
+            <iframe 
+                id="lightbox-video" 
+                class="video-frame" 
+                src="" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
     <footer>
@@ -64,33 +86,53 @@
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        const navLinks = document.querySelector('.nav-links');
-        function toggleMenu() {
-            navLinks.classList.toggle('active');
+        // Unified Mobile Sidebar Menu
+        const hamburger = document.getElementById('hamburger');
+        const navContainer = document.getElementById('nav-container');
+        const closeMenu = document.getElementById('close-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        function openMenu() {
+            navContainer.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        // Upgraded Video Lightbox Functionality
+        function closeMenuFunc() {
+            navContainer.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        hamburger.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        menuOverlay.addEventListener('click', closeMenuFunc);
+        navItems.forEach(item => item.addEventListener('click', closeMenuFunc));
+
+        // Video Lightbox Controls
+        const lightbox = document.getElementById('lightbox');
+        const lightboxVideo = document.getElementById('lightbox-video');
+
         function openVideoLightbox(videoUrl) {
-            const lightbox = document.getElementById("lightbox");
-            const lightboxVideo = document.getElementById("lightbox-video");
-            
-            lightbox.style.display = "flex";
-            lightboxVideo.src = videoUrl; // Loads the YouTube video
-            document.body.style.overflow = "hidden"; // Stops background scrolling
+            lightbox.classList.add('active');
+            lightboxVideo.src = videoUrl;
+            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox(event) {
-            // Prevents closing if the user clicks directly on the video player itself
-            if(event && event.target.id === 'lightbox-video') return; 
-
-            const lightbox = document.getElementById("lightbox");
-            const lightboxVideo = document.getElementById("lightbox-video");
-            
-            lightbox.style.display = "none";
-            lightboxVideo.src = ""; // STOPS the video audio from playing in the background
-            document.body.style.overflow = "auto"; // Turns background scrolling back on
+            if (event && event.target.id === 'lightbox-video') return;
+            lightbox.classList.remove('active');
+            lightboxVideo.src = '';
+            document.body.style.overflow = 'auto';
         }
+
+        // Close video with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
     </script>
 
     <script src="theme-toggle.js"></script>
